@@ -14,11 +14,14 @@
       function criarElementoFilme(filme) {
         var li = document.createElement("li");
         var img = document.createElement("img");
+
         img.src = filme.imagemCartaz;
         img.alt = filme.nome;
         img.style.width = "200px";
+
         li.innerHTML = `<strong>${filme.nome}</strong> - Diretor: ${filme.diretor}, Ano: ${filme.anoLancamento}`;
         li.appendChild(img);
+
         return li;
       }
 
