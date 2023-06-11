@@ -1,0 +1,37 @@
+{
+  "filmes": [
+    {
+      "id": 1,
+      "nome": "Princesa Mononoke",
+      "cinema": "GNC Balneario",
+      "imagemCartaz": "https://i0.wp.com/studioghibli.com.br/wp-content/uploads/2020/04/Princesa-Mononoke-DVD-capa-vers%C3%A1til.jpg?fit=1500%2C2124&ssl=1",
+      "startTime": "14:00",
+      "diretor": "Hayao Miyazaki",
+      "tipo": "Aventura",
+      "anoLancamento": 1997,
+      "classificacaoEtaria": "16+"
+    },
+    {
+      "id": 2,
+      "nome": "A viagem de Chihiro",
+      "cinema": "Cinemark",
+      "imagemCartaz": "https://br.web.img3.acsta.net/pictures/210/527/21052756_20131024195513383.jpg",
+      "startTime": "14:00",
+      "diretor": "Hayao Miyazaki",
+      "tipo": "Fantasia",
+      "anoLancamento": 2003,
+      "classificacaoEtaria": "14+"
+    },
+    {
+      "id": 3,
+      "nome": "Chega de Reagir",
+      "cinema": "cINEPOLIS",
+      "imagemCartaz": "https://jardimdasamericas.com.br/uploads/2023/06/capa-filme-homem-aranha-atraves-do-aranhaverso-30656-large.jpeg",
+      "startTime": "20:00",
+      "diretor": "Joaquim Dos Santos, Justin K. Thompson, Kemp Powers",
+      "tipo": "Fantasia",
+      "anoLancamento": 2023,
+      "classificacaoEtaria": "12+"
+    }
+  ]
+}

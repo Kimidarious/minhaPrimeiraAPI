@@ -1,0 +1,14 @@
+EXECUÇÃO DA API
+- Verifique se tem o node.js instalado caso contrario, instale-o;
+- dentro da pasta do projeto execute o comando npm init -y;
+- instale o express com o comando npm install express;
+- dentro da pasta do arquivo server.js rode o comando node server.js;
+-   
+
+API no JSON SERVER LOCAL
+- Com o node instalado, instale o Json Server com o comando npm install -g json-server;
+- inicie o json server com o comando json-server --watch db.json;
+- esse comando será executado no arquivo db.json que é nosso arquivo de dados;
+
+CONSUMINDO API COM FETCH
+- Com o Json Server em execução, abra o arquivo consume.html e ele estará executando com alguns filtros de algumas informações dos filmes 

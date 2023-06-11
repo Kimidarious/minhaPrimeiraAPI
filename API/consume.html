@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API Filmes</title>
+  </head>
+  <body>
+    <h1>Lista de Filmes</h1>
+
+    <ul id="filmes-lista"></ul>
+
+    <script>
+      function criarElementoFilme(filme) {
+        var li = document.createElement("li");
+        var img = document.createElement("img");
+        img.src = filme.imagemCartaz;
+        img.alt = filme.nome;
+        img.style.width = "200px";
+        li.innerHTML = `<strong>${filme.nome}</strong> - Diretor: ${filme.diretor}, Ano: ${filme.anoLancamento}`;
+        li.appendChild(img);
+        return li;
+      }
+
+      fetch("http://localhost:3000/filmes")
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (data) {
+          var filmesLista = document.getElementById("filmes-lista");
+          data.forEach(function (filme) {
+            var li = criarElementoFilme(filme);
+            filmesLista.appendChild(li);
+          });
+          // Faça algo com os dados retornados pela API
+        })
+        .catch(function (error) {
+          console.log("Ocorreu um erro:", error);
+        });
+    </script>
+  </body>
+</html>
