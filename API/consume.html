@@ -4,6 +4,45 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>API Filmes</title>
+
+    <style>
+      #filmes-lista {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-gap: 20px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      #filmes-lista li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        border: 1px solid #ccc;
+        padding: 10px;
+        background-color: #f5f5f5;
+        border-radius: 5px;
+      }
+
+      #filmes-lista li img {
+        width: 100%;
+        max-height: 200px;
+        object-fit: cover;
+        margin-bottom: 10px;
+        border-radius: 5px;
+      }
+
+      #filmes-lista li strong {
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      #filmes-lista li p {
+        margin: 0;
+      }
+    </style>
   </head>
   <body>
     <h1>Lista de Filmes</h1>
@@ -17,21 +56,27 @@
 
         img.src = filme.imagemCartaz;
         img.alt = filme.nome;
-        img.style.width = "200px";
 
-        li.innerHTML = `<strong>${filme.nome}</strong> - Diretor: ${filme.diretor}, Ano: ${filme.anoLancamento}`;
+        li.innerHTML = `
+          <img src="${filme.imagemCartaz}" alt="${filme.nome}">
+          <strong>${filme.nome}</strong><br> 
+          <p>Diretor: ${filme.diretor}</p>
+          <p>Ano: ${filme.anoLancamento}</p>`;
+
         li.appendChild(img);
 
         return li;
       }
 
-      fetch("http://localhost:3000/filmes")
+      fetch("https://api.jsonbin.io/v3/b/648f1478b89b1e2299b10fba")
         .then(function (response) {
           return response.json();
         })
         .then(function (data) {
           var filmesLista = document.getElementById("filmes-lista");
-          data.forEach(function (filme) {
+          var filmes = data.record.filmes;
+
+          filmes.forEach(function (filme) {
             var li = criarElementoFilme(filme);
             filmesLista.appendChild(li);
           });
